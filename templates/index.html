@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iris Flower Predictor</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f2f2f2; }
+        form { background: white; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; }
+        input { margin-bottom: 10px; width: 100%; padding: 8px; }
+        button { padding: 10px 20px; }
+        .result { margin-top: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <form action="/predict" method="post">
+        <h2>Predict Iris Flower</h2>
+        <input type="number" name="sepal_length" step="any" placeholder="Sepal Length" required>
+        <input type="number" name="sepal_width" step="any" placeholder="Sepal Width" required>
+        <input type="number" name="petal_length" step="any" placeholder="Petal Length" required>
+        <input type="number" name="petal_width" step="any" placeholder="Petal Width" required>
+        <button type="submit">Predict</button>
+    </form>
+    <div class="result">{{ result|safe }}</div>
+</body>
+</html>
