@@ -1,0 +1,115 @@
+/* Skills.css */
+.skills {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.05) 0%, transparent 100%);
+}
+
+[data-theme="light"] .skills {
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.08) 0%, transparent 100%);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-category-card {
+  padding: 2rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="light"] .skill-category-card {
+  background: rgba(255, 140, 0, 0.05);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+.skill-category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.skill-category-card:hover::before {
+  left: 100%;
+}
+
+.skill-category-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 32px rgba(255, 140, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.skill-category-header {
+  margin-bottom: 1.5rem;
+}
+
+.skill-category-header h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 1rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-tag {
+  background: rgba(255, 140, 0, 0.1);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+[data-theme="light"] .skill-tag {
+  background: rgba(255, 140, 0, 0.15);
+  border: 1px solid rgba(255, 140, 0, 0.4);
+}
+
+.skill-tag:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+}
+
+.skill-name {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.skill-tag:hover .skill-name {
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills {
+    padding: 4rem 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
